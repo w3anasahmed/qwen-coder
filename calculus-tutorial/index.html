@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus Made Easy - Real Life Examples</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🧮 Calculus Made Easy</h1>
+            <p class="tagline">Learn calculus through real-life examples</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#limits">Limits</a></li>
+                <li><a href="#derivatives">Derivatives</a></li>
+                <li><a href="#integrals">Integrals</a></li>
+                <li><a href="#applications">Applications</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Introduction Section -->
+        <section id="introduction" class="topic-section">
+            <h2>📚 What is Calculus?</h2>
+            <div class="content-box">
+                <p>Calculus is the mathematical study of <strong>continuous change</strong>. It has two major branches:</p>
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h3>📈 Differential Calculus</h3>
+                        <p>Concerned with rates of change and slopes of curves</p>
+                    </div>
+                    <div class="concept-card">
+                        <h3>📊 Integral Calculus</h3>
+                        <p>Concerned with accumulation of quantities and areas under curves</p>
+                    </div>
+                </div>
+                
+                <div class="real-life-example">
+                    <h3>💡 Real-Life Context</h3>
+                    <p>Think of calculus as the mathematics of motion and change. When you drive a car, your speedometer shows your instantaneous rate of change (derivative), while your odometer shows the total distance traveled (integral).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Limits Section -->
+        <section id="limits" class="topic-section">
+            <h2>🎯 Limits: The Foundation</h2>
+            <div class="content-box">
+                <h3>What is a Limit?</h3>
+                <p>A limit describes the value that a function approaches as the input approaches some value.</p>
+                
+                <div class="formula-box">
+                    <p><strong>Notation:</strong> lim<sub>x → a</sub> f(x) = L</p>
+                    <p>"The limit of f(x) as x approaches a equals L"</p>
+                </div>
+
+                <h3>Simple Example</h3>
+                <p>Consider f(x) = (x² - 1)/(x - 1)</p>
+                <p>As x approaches 1, f(x) approaches 2</p>
+
+                <div class="real-life-example">
+                    <h3>🚗 Real-Life Example: Approaching a Stop Sign</h3>
+                    <p>Imagine you're driving toward a stop sign. As you get closer and closer to the sign (but haven't reached it yet), your distance to the sign approaches zero.</p>
+                    <ul>
+                        <li>At 100 feet away → you're far</li>
+                        <li>At 10 feet away → you're close</li>
+                        <li>At 1 foot away → you're very close</li>
+                        <li><strong>Limit:</strong> As you approach the sign, your distance approaches 0</li>
+                    </ul>
+                    <p>This is exactly what a limit represents – what value we're getting closer to, even if we never actually reach it!</p>
+                </div>
+
+                <div class="practice-problem">
+                    <h3>✏️ Try It Yourself</h3>
+                    <p>Find: lim<sub>x → 3</sub> (2x + 1)</p>
+                    <details>
+                        <summary>Click to see solution</summary>
+                        <p>As x approaches 3, substitute: 2(3) + 1 = 7</p>
+                        <p><strong>Answer:</strong> 7</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Derivatives Section -->
+        <section id="derivatives" class="topic-section">
+            <h2>📈 Derivatives: Rates of Change</h2>
+            <div class="content-box">
+                <h3>What is a Derivative?</h3>
+                <p>A derivative measures how a function changes as its input changes. It represents the <strong>instantaneous rate of change</strong> or the <strong>slope of the tangent line</strong>.</p>
+                
+                <div class="formula-box">
+                    <p><strong>Notation:</strong> f'(x) or dy/dx</p>
+                    <p><strong>Definition:</strong> f'(x) = lim<sub>h→0</sub> [f(x+h) - f(x)]/h</p>
+                </div>
+
+                <h3>Basic Rules</h3>
+                <div class="rules-table">
+                    <table>
+                        <tr>
+                            <th>Function</th>
+                            <th>Derivative</th>
+                        </tr>
+                        <tr>
+                            <td>f(x) = c (constant)</td>
+                            <td>f'(x) = 0</td>
+                        </tr>
+                        <tr>
+                            <td>f(x) = xⁿ</td>
+                            <td>f'(x) = nxⁿ⁻¹</td>
+                        </tr>
+                        <tr>
+                            <td>f(x) = eˣ</td>
+                            <td>f'(x) = eˣ</td>
+                        </tr>
+                        <tr>
+                            <td>f(x) = sin(x)</td>
+                            <td>f'(x) = cos(x)</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="real-life-example">
+                    <h3>🚀 Real-Life Example: Car Speed and Acceleration</h3>
+                    <p>Your position while driving can be described by a function s(t), where t is time.</p>
+                    <ul>
+                        <li><strong>Position:</strong> s(t) = where you are</li>
+                        <li><strong>Velocity (1st derivative):</strong> v(t) = s'(t) = how fast you're going</li>
+                        <li><strong>Acceleration (2nd derivative):</strong> a(t) = v'(t) = s''(t) = how quickly your speed is changing</li>
+                    </ul>
+                    
+                    <div class="example-scenario">
+                        <h4>Scenario:</h4>
+                        <p>If your position is s(t) = t² (in meters, t in seconds):</p>
+                        <ul>
+                            <li>Velocity: v(t) = s'(t) = 2t m/s</li>
+                            <li>Acceleration: a(t) = v'(t) = 2 m/s²</li>
+                        </ul>
+                        <p>At t = 5 seconds:</p>
+                        <ul>
+                            <li>You've traveled 25 meters</li>
+                            <li>You're moving at 10 m/s</li>
+                            <li>Your acceleration is constant at 2 m/s²</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="real-life-example">
+                    <h3>💰 Another Example: Business Profit</h3>
+                    <p>If P(x) represents profit from selling x items:</p>
+                    <ul>
+                        <li><strong>P'(x)</strong> tells you the <em>marginal profit</em> - how much extra profit you make from selling one more item</li>
+                        <li>When P'(x) = 0, you've found maximum profit!</li>
+                    </ul>
+                </div>
+
+                <div class="practice-problem">
+                    <h3>✏️ Practice Problems</h3>
+                    <ol>
+                        <li>Find the derivative of f(x) = x³</li>
+                        <details>
+                            <summary>Solution</summary>
+                            <p>f'(x) = 3x²</p>
+                        </details>
+                        
+                        <li>Find the derivative of f(x) = 5x² + 3x</li>
+                        <details>
+                            <summary>Solution</summary>
+                            <p>f'(x) = 10x + 3</p>
+                        </details>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Integrals Section -->
+        <section id="integrals" class="topic-section">
+            <h2>📊 Integrals: Accumulation</h2>
+            <div class="content-box">
+                <h3>What is an Integral?</h3>
+                <p>An integral represents the <strong>accumulation of quantities</strong> or the <strong>area under a curve</strong>. It's the reverse operation of differentiation.</p>
+                
+                <div class="formula-box">
+                    <p><strong>Indefinite Integral:</strong> ∫ f(x)dx = F(x) + C</p>
+                    <p><strong>Definite Integral:</strong> ∫<sub>a</sub><sup>b</sup> f(x)dx = F(b) - F(a)</p>
+                </div>
+
+                <h3>Key Concept: The Fundamental Theorem</h3>
+                <p>Differentiation and integration are inverse operations!</p>
+                <ul>
+                    <li>If you differentiate then integrate, you get back to where you started</li>
+                    <li>If you integrate then differentiate, you also get back to where you started</li>
+                </ul>
+
+                <div class="real-life-example">
+                    <h3>💧 Real-Life Example: Filling a Water Tank</h3>
+                    <p>Imagine water flowing into a tank at a rate of r(t) liters per minute.</p>
+                    <ul>
+                        <li><strong>r(t)</strong> = flow rate (liters/minute)</li>
+                        <li><strong>∫ r(t)dt</strong> = total amount of water accumulated</li>
+                    </ul>
+                    
+                    <div class="example-scenario">
+                        <h4>Scenario:</h4>
+                        <p>If water flows at r(t) = 2t liters/minute:</p>
+                        <ul>
+                            <li>After 5 minutes, total water = ∫₀⁵ 2t dt = [t²]₀⁵ = 25 liters</li>
+                            <li>The integral accumulates all the water that flowed over time</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="real-life-example">
+                    <h3>🚗 Another Example: Distance from Speed</h3>
+                    <p>If you know your velocity v(t) at every moment:</p>
+                    <ul>
+                        <li><strong>Total Distance = ∫ v(t)dt</strong></li>
+                        <li>The integral adds up all the tiny distances traveled in each instant</li>
+                    </ul>
+                    <p>This is why your car's odometer works - it integrates your speed over time!</p>
+                </div>
+
+                <div class="real-life-example">
+                    <h3>💵 Business Application: Total Revenue</h3>
+                    <p>If marginal revenue MR(x) tells you revenue from selling one more item:</p>
+                    <ul>
+                        <li><strong>Total Revenue = ∫ MR(x)dx</strong></li>
+                        <li>Integrate marginal revenue to get total revenue</li>
+                    </ul>
+                </div>
+
+                <div class="practice-problem">
+                    <h3>✏️ Practice Problems</h3>
+                    <ol>
+                        <li>Find ∫ x² dx</li>
+                        <details>
+                            <summary>Solution</summary>
+                            <p>∫ x² dx = x³/3 + C</p>
+                        </details>
+                        
+                        <li>Calculate ∫₀² 3x² dx</li>
+                        <details>
+                            <summary>Solution</summary>
+                            <p>[x³]₀² = 8 - 0 = 8</p>
+                        </details>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Applications Section -->
+        <section id="applications" class="topic-section">
+            <h2>🌍 Real-World Applications</h2>
+            <div class="content-box">
+                <h3>Where is Calculus Used?</h3>
+                
+                <div class="application-grid">
+                    <div class="application-card">
+                        <h3>🏗️ Engineering</h3>
+                        <ul>
+                            <li>Designing bridges and buildings</li>
+                            <li>Optimizing structural integrity</li>
+                            <li>Heat transfer calculations</li>
+                        </ul>
+                    </div>
+
+                    <div class="application-card">
+                        <h3>📈 Economics</h3>
+                        <ul>
+                            <li>Maximizing profit</li>
+                            <li>Minimizing costs</li>
+                            <li>Predicting market trends</li>
+                        </ul>
+                    </div>
+
+                    <div class="application-card">
+                        <h3>🔬 Physics</h3>
+                        <ul>
+                            <li>Motion and mechanics</li>
+                            <li>Electromagnetic fields</li>
+                            <li>Quantum mechanics</li>
+                        </ul>
+                    </div>
+
+                    <div class="application-card">
+                        <h3>💊 Medicine</h3>
+                        <ul>
+                            <li>Drug dosage optimization</li>
+                            <li>Modeling disease spread</li>
+                            <li>Medical imaging (MRI, CT)</li>
+                        </ul>
+                    </div>
+
+                    <div class="application-card">
+                        <h3>🤖 Computer Science</h3>
+                        <ul>
+                            <li>Machine learning algorithms</li>
+                            <li>Computer graphics</li>
+                            <li>Data analysis</li>
+                        </ul>
+                    </div>
+
+                    <div class="application-card">
+                        <h3>🌡️ Environmental Science</h3>
+                        <ul>
+                            <li>Climate modeling</li>
+                            <li>Pollution dispersion</li>
+                            <li>Population dynamics</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="real-life-example">
+                    <h3>🎯 Detailed Example: Optimizing a Garden</h3>
+                    <p>You have 100 meters of fencing and want to create a rectangular garden with maximum area.</p>
+                    
+                    <div class="example-scenario">
+                        <h4>Solution Using Calculus:</h4>
+                        <ol>
+                            <li>Let width = w, length = l</li>
+                            <li>Perimeter: 2w + 2l = 100 → l = 50 - w</li>
+                            <li>Area: A(w) = w × l = w(50 - w) = 50w - w²</li>
+                            <li>Find maximum: A'(w) = 50 - 2w</li>
+                            <li>Set A'(w) = 0: 50 - 2w = 0 → w = 25</li>
+                            <li>Therefore: l = 25</li>
+                        </ol>
+                        <p><strong>Result:</strong> A square garden (25m × 25m) gives maximum area of 625 m²!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Reference -->
+        <section id="reference" class="topic-section">
+            <h2>📋 Quick Reference Sheet</h2>
+            <div class="content-box">
+                <h3>Common Derivatives</h3>
+                <div class="reference-table">
+                    <table>
+                        <tr><th>Function</th><th>Derivative</th></tr>
+                        <tr><td>xⁿ</td><td>nxⁿ⁻¹</td></tr>
+                        <tr><td>eˣ</td><td>eˣ</td></tr>
+                        <tr><td>ln(x)</td><td>1/x</td></tr>
+                        <tr><td>sin(x)</td><td>cos(x)</td></tr>
+                        <tr><td>cos(x)</td><td>-sin(x)</td></tr>
+                        <tr><td>tan(x)</td><td>sec²(x)</td></tr>
+                    </table>
+                </div>
+
+                <h3>Common Integrals</h3>
+                <div class="reference-table">
+                    <table>
+                        <tr><th>Function</th><th>Integral</th></tr>
+                        <tr><td>xⁿ</td><td>xⁿ⁺¹/(n+1) + C</td></tr>
+                        <tr><td>eˣ</td><td>eˣ + C</td></tr>
+                        <tr><td>1/x</td><td>ln|x| + C</td></tr>
+                        <tr><td>sin(x)</td><td>-cos(x) + C</td></tr>
+                        <tr><td>cos(x)</td><td>sin(x) + C</td></tr>
+                        <tr><td>sec²(x)</td><td>tan(x) + C</td></tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>🧮 Calculus Made Easy - Learn through real-life examples</p>
+            <p>Remember: Calculus is not just abstract math - it's the language of change in our universe!</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
