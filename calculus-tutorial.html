@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus Mastery: Zero to Hero</title>
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-card: #334155;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --accent: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.3);
+            --success: #4ade80;
+            --warning: #fbbf24;
+            --danger: #f87171;
+            --code-bg: #020617;
+            --border: #475569;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        h1 { font-size: 3rem; text-align: center; margin-bottom: 2rem; text-shadow: 0 0 20px var(--accent-glow); }
+        h2 { font-size: 2.2rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; margin-top: 3rem; }
+        h3 { font-size: 1.5rem; color: var(--text-primary); margin-top: 1.5rem; }
+        p { margin-bottom: 1.2rem; font-size: 1.1rem; color: var(--text-secondary); }
+
+        /* Layout */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 0;
+            background: radial-gradient(circle at center, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 1.5rem;
+            padding: 0 1rem;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent);
+        }
+
+        /* Cards & Sections */
+        .section-card {
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        /* Real Life Example Box */
+        .real-life-box {
+            background: linear-gradient(145deg, var(--bg-card), var(--bg-secondary));
+            border-left: 5px solid var(--success);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .real-life-box h4 {
+            color: var(--success);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Math Formulas */
+        .formula {
+            background-color: var(--code-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            color: var(--warning);
+            text-align: center;
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            border: 1px solid var(--border);
+            overflow-x: auto;
+        }
+
+        /* Interactive Toggle */
+        .toggle-btn {
+            background-color: var(--accent);
+            color: var(--bg-primary);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+
+        .toggle-btn:hover {
+            background-color: #7dd3fc;
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .hidden-content {
+            display: none;
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: var(--bg-primary);
+            border-radius: 8px;
+            border: 1px dashed var(--border);
+        }
+
+        .hidden-content.show {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 1001;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--accent);
+            width: 0%;
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.8rem; }
+            .container { padding: 1rem; }
+            nav ul { justify-content: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Reading Progress -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#limits">Limits</a></li>
+            <li><a href="#derivatives">Derivatives</a></li>
+            <li><a href="#applications">Applications</a></li>
+            <li><a href="#integrals">Integrals</a></li>
+            <li><a href="#advanced">Advanced</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1>🧮 Calculus: Zero to Hero</h1>
+            <p style="font-size: 1.3rem; max-width: 600px; margin: 0 auto;">
+                The ultimate guide from basic concepts to advanced mastery. 
+                Dark mode enabled. Real-world examples included. No fluff.
+            </p>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Introduction -->
+        <section id="intro" class="section-card">
+            <h2>1. What is Calculus?</h2>
+            <p>Calculus is the mathematical study of <strong>continuous change</strong>. Just as geometry studies shapes and algebra studies operations, calculus studies how things change over time or space.</p>
+            
+            <div class="real-life-box">
+                <h4>🌍 The Big Picture Analogy</h4>
+                <p>Imagine you are taking a road trip.</p>
+                <ul>
+                    <li><strong>Algebra</strong> tells you: "We traveled 100 miles in 2 hours, so our average speed was 50 mph."</li>
+                    <li><strong>Calculus</strong> asks: "What was my exact speed at the precise moment I passed that specific tree?" or "If my speed changes every second, exactly how far did I go?"</li>
+                </ul>
+            </div>
+            <p>Calculus has two main branches:</p>
+            <ol style="margin-left: 1.5rem; color: var(--text-secondary);">
+                <li><strong>Differential Calculus:</strong> Cutting things into tiny pieces to find rates of change (Slopes).</li>
+                <li><strong>Integral Calculus:</strong> Adding tiny pieces together to find totals (Areas).</li>
+            </ol>
+        </section>
+
+        <!-- Limits -->
+        <section id="limits" class="section-card">
+            <h2>2. Limits: The Foundation</h2>
+            <p>A limit describes the value that a function approaches as the input approaches some value. It's about getting infinitely close without necessarily touching.</p>
+            
+            <div class="formula">
+                lim<sub>x→c</sub> f(x) = L
+            </div>
+            <p style="font-size: 0.9rem; text-align: center;">"As x gets closer to c, f(x) gets closer to L"</p>
+
+            <div class="real-life-box">
+                <h4>🏃 Real Life Example: The Zeno's Paradox Walk</h4>
+                <p>Imagine walking towards a wall. To get there, you must first walk half the distance. Then half of the remaining distance. Then half again.</p>
+                <p>You keep cutting the distance in half: 1/2, 1/4, 1/8, 1/16... You never technically "reach" zero distance in a finite number of steps mathematically, but your <strong>limit</strong> is the wall. In reality, you hit the wall. Calculus uses limits to handle these "infinity" scenarios logically.</p>
+            </div>
+
+            <button class="toggle-btn" onclick="toggleContent('limit-ex')">See Another Example</button>
+            <div id="limit-ex" class="hidden-content">
+                <h4>☕ Coffee Cooling</h4>
+                <p>You pour hot coffee (90°C) in a room (20°C). As time goes on, the coffee cools down. It gets closer and closer to 20°C. It might never mathematically reach exactly 20°C in finite time (it becomes 20.000001...), but the <strong>limit</strong> of the temperature as time goes to infinity is 20°C.</p>
+            </div>
+        </section>
+
+        <!-- Derivatives -->
+        <section id="derivatives" class="section-card">
+            <h2>3. Derivatives: Rates of Change</h2>
+            <p>The derivative measures the <strong>sensitivity to change</strong> of a function value with respect to a change in its argument. Geometrically, it's the slope of the tangent line.</p>
+
+            <div class="formula">
+                f'(x) = lim<sub>h→0</sub> [f(x+h) - f(x)] / h
+            </div>
+
+            <div class="real-life-box">
+                <h4>🚗 Real Life Example: The Speedometer</h4>
+                <p>Your car's odometer measures total distance (Position). Your speedometer measures the <strong>derivative</strong> of your position.</p>
+                <ul>
+                    <li>If you look at the odometer over 1 hour, you get <em>Average Speed</em>.</li>
+                    <li>The speedometer shows your speed at this <em>exact instant</em>. That is the derivative!</li>
+                </ul>
+                <p><strong>Chain Rule Example:</strong> If your speed depends on how hard you press the gas, and the gas pedal position depends on your foot angle, the Chain Rule calculates how your foot angle affects your speed.</p>
+            </div>
+
+            <h3>Common Derivative Rules</h3>
+            <ul style="list-style: none; color: var(--text-secondary);">
+                <li style="margin-bottom: 0.5rem;"><strong>Power Rule:</strong> d/dx(xⁿ) = nxⁿ⁻¹ <span style="color:var(--accent)">*(Bring down power, subtract one)*</span></li>
+                <li style="margin-bottom: 0.5rem;"><strong>Product Rule:</strong> (fg)' = f'g + fg'</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Chain Rule:</strong> (f(g(x)))' = f'(g(x)) · g'(x)</li>
+            </ul>
+
+            <button class="toggle-btn" onclick="toggleContent('deriv-practice')">Try a Problem</button>
+            <div id="deriv-practice" class="hidden-content">
+                <h4>📝 Practice Problem</h4>
+                <p>Find the derivative of <code>f(x) = x² + 3x</code>.</p>
+                <p><strong>Solution:</strong></p>
+                <p>Using Power Rule on x² → 2x<br>Using Power Rule on 3x → 3<br><strong>Answer: f'(x) = 2x + 3</strong></p>
+                <p><em>Meaning: At any point x, the slope of the curve is 2x+3.</em></p>
+            </div>
+        </section>
+
+        <!-- Applications of Derivatives -->
+        <section id="applications" class="section-card">
+            <h2>4. Applications: Optimization</h2>
+            <p>One of the most powerful uses of derivatives is finding maximums and minimums. When the derivative (slope) is zero, you are at a peak or a valley.</p>
+
+            <div class="real-life-box">
+                <h4>💰 Real Life Example: Maximizing Profit</h4>
+                <p>You own a lemonade stand. 
+                <br>- If you charge $0.10, you sell 1000 cups (Low profit per cup).
+                <br>- If you charge $10.00, you sell 0 cups (High profit per cup, but no sales).
+                <br><strong>The Goal:</strong> Find the exact price that maximizes total profit.</p>
+                <p><strong>Calculus Solution:</strong> Create a Profit function P(price). Take the derivative P'. Set P' = 0. Solve for price. That specific price is your optimal strategy!</p>
+            </div>
+
+            <div class="real-life-box">
+                <h4>📦 Real Life Example: Minimal Material</h4>
+                <p>A soda can company wants to make a can that holds 355ml of liquid but uses the <strong>least amount of aluminum</strong> possible to save money.</p>
+                <p>They use derivatives to minimize the Surface Area function while keeping the Volume constant. This is why soda cans have the specific dimensions they do!</p>
+            </div>
+        </section>
+
+        <!-- Integrals -->
+        <section id="integrals" class="section-card">
+            <h2>5. Integrals: Accumulation</h2>
+            <p>Integration is the reverse of differentiation. It sums up infinite tiny slices to find a whole. It calculates the area under a curve.</p>
+
+            <div class="formula">
+                ∫ f(x) dx = F(x) + C
+            </div>
+
+            <div class="real-life-box">
+                <h4>💧 Real Life Example: Filling a Bathtub</h4>
+                <p>Imagine the water flow from your tap varies over time (sometimes fast, sometimes slow).</p>
+                <ul>
+                    <li>The <strong>flow rate</strong> is the function (like a derivative).</li>
+                    <li>The <strong>total volume</strong> of water in the tub after 10 minutes is the <strong>Integral</strong>.</li>
+                </ul>
+                <p>Calculus adds up every tiny drop of water that flowed every millisecond to tell you exactly how full the tub is.</p>
+            </div>
+
+            <div class="real-life-box">
+                <h4>🚀 Real Life Example: Rocket Distance</h4>
+                <p>A rocket accelerates non-linearly. Its velocity changes every second due to burning fuel (getting lighter) and gravity.</p>
+                <p>To find out how high the rocket went after 60 seconds, you cannot just do `Speed × Time`. You must <strong>Integrate the velocity function</strong> over the time interval [0, 60]. This sums up the tiny distances traveled in each infinitesimal moment.</p>
+            </div>
+
+            <button class="toggle-btn" onclick="toggleContent('int-rules')">Integration Techniques</button>
+            <div id="int-rules" class="hidden-content">
+                <h4>Key Techniques</h4>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem;">
+                    <li><strong>Power Rule for Integrals:</strong> ∫xⁿ dx = (xⁿ⁺¹)/(n+1)</li>
+                    <li><strong>U-Substitution:</strong> Used for reversing the Chain Rule. Great for complex composite functions.</li>
+                    <li><strong>Integration by Parts:</strong> Used for products of functions (Reverse Product Rule).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Advanced Calculus -->
+        <section id="advanced" class="section-card">
+            <h2>6. Advanced Concepts (The "Fucker" Level)</h2>
+            <p>Once you master the basics, calculus expands into multi-dimensional and dynamic systems.</p>
+
+            <h3>Multivariable Calculus</h3>
+            <p>Dealing with functions of multiple variables (e.g., Temperature depending on Location X, Y, and Time T).</p>
+            <div class="real-life-box">
+                <h4>🌡️ Weather Prediction</h4>
+                <p>Meteorologists use <strong>Partial Derivatives</strong>. They calculate how temperature changes if you move North (holding East/West constant) vs. how it changes if you move Up in altitude. This creates 3D models of weather systems.</p>
+            </div>
+
+            <h3>Differential Equations</h3>
+            <p>Equations that relate a function to its derivatives. These describe how systems evolve.</p>
+            <div class="real-life-box">
+                <h4>🦠 Epidemic Modeling</h4>
+                <p>How does a virus spread? The rate of new infections depends on the current number of infected people. <br><code>dI/dt = β·S·I - γ·I</code><br>Solving this differential equation predicts the peak of a pandemic and helps governments plan lockdowns.</p>
+            </div>
+
+            <h3>Vector Calculus</h3>
+            <p>Calculus with vectors (magnitude and direction). Essential for fluid dynamics and electromagnetism.</p>
+            <div class="real-life-box">
+                <h4>✈️ Aerodynamics</h4>
+                <p>Designing an airplane wing requires calculating the flow of air (a vector field) around the curve. Concepts like <strong>Divergence</strong> (source/sink of flow) and <strong>Curl</strong> (rotation of flow) are used to maximize lift and minimize drag.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Calculus Mastery. Built for learners who want to understand the universe.</p>
+        <p style="font-size: 0.9rem; margin-top: 1rem;">Keep integrating knowledge!</p>
+    </footer>
+
+    <script>
+        // Toggle Content Function
+        function toggleContent(id) {
+            const element = document.getElementById(id);
+            const btn = event.target;
+            
+            if (element.classList.contains('show')) {
+                element.classList.remove('show');
+                btn.textContent = btn.textContent.replace('Hide', 'See');
+            } else {
+                element.classList.add('show');
+                btn.textContent = btn.textContent.replace('See', 'Hide');
+            }
+        }
+
+        // Scroll Progress Bar
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+            
+            // Active Nav Link Highlighting
+            highlightNav();
+        };
+
+        // Simple Active Link Highlighter
+        function highlightNav() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href').includes(current)) {
+                    a.classList.add('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
