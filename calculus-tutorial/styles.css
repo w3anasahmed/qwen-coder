@@ -1,0 +1,407 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.8;
+    color: #2c3e50;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 60px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 3.5rem;
+    color: #667eea;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tagline {
+    font-size: 1.3rem;
+    color: #7f8c8d;
+    font-weight: 300;
+}
+
+/* Navigation */
+nav {
+    background: rgba(255, 255, 255, 0.98);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    display: block;
+    padding: 20px 30px;
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover {
+    background: #667eea;
+    color: white;
+    border-bottom-color: #764ba2;
+}
+
+/* Main Content */
+main {
+    background: rgba(255, 255, 255, 0.95);
+    margin: 40px auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 40px 0;
+}
+
+.topic-section {
+    margin-bottom: 60px;
+    scroll-margin-top: 80px;
+}
+
+.topic-section h2 {
+    font-size: 2.5rem;
+    color: #667eea;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 4px solid #667eea;
+    text-align: center;
+}
+
+.content-box {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.content-box h3 {
+    font-size: 1.8rem;
+    color: #764ba2;
+    margin: 30px 0 15px 0;
+}
+
+.content-box p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.content-box ul, .content-box ol {
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.content-box li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Formula Box */
+.formula-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 25px 0;
+    text-align: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.formula-box strong {
+    font-size: 1.3rem;
+}
+
+/* Concept Grid */
+.concept-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.concept-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 30px;
+    border-radius: 10px;
+    border-left: 5px solid #667eea;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.concept-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.concept-card h3 {
+    font-size: 1.5rem;
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+/* Real Life Example Box */
+.real-life-example {
+    background: linear-gradient(135deg, #fff5e6 0%, #ffe0b2 100%);
+    border-left: 5px solid #ff9800;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 30px 0;
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.2);
+}
+
+.real-life-example h3 {
+    color: #e65100;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.example-scenario {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 2px dashed #ff9800;
+}
+
+.example-scenario h4 {
+    color: #ff9800;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+/* Practice Problem Box */
+.practice-problem {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border-left: 5px solid #4caf50;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 30px 0;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+}
+
+.practice-problem h3 {
+    color: #2e7d32;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.practice-problem details {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.practice-problem details:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.practice-problem summary {
+    color: #4caf50;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Tables */
+.rules-table, .reference-table {
+    overflow-x: auto;
+    margin: 25px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 18px 15px;
+    text-align: left;
+    font-size: 1.1rem;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #ecf0f1;
+    font-size: 1.1rem;
+}
+
+tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+tr:hover {
+    background: #e8f4f8;
+}
+
+/* Application Grid */
+.application-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.application-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 30px;
+    border-radius: 10px;
+    border-top: 5px solid #667eea;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.application-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-top-color: #764ba2;
+}
+
+.application-card h3 {
+    color: #667eea;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.application-card ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+.application-card li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.application-card li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #4caf50;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 40px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .tagline {
+        font-size: 1.1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        padding: 15px 20px;
+        border-bottom: 2px solid transparent;
+    }
+
+    .topic-section h2 {
+        font-size: 2rem;
+    }
+
+    .content-box {
+        padding: 25px;
+    }
+
+    .concept-grid,
+    .application-grid {
+        grid-template-columns: 1fr;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 12px 10px;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection Color */
+::selection {
+    background: #667eea;
+    color: white;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #764ba2;
+}
